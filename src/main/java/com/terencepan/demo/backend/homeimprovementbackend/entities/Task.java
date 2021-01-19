@@ -1,6 +1,10 @@
 package com.terencepan.demo.backend.homeimprovementbackend.entities;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -16,8 +20,12 @@ public class Task {
     private List<Comment> taskComments;
     @OneToMany
     private List<Material> taskMaterials;
-    @OneToOne
-    private User createdBy;
+    //@CreatedBy
+    private String createdBy;
+    private LocalDateTime createdOn;
+    //@LastModifiedBy
+    private String modifiedBy;
+    private LocalDateTime modifiedOn;
 
     public void setTaskId(Long taskId) {
         this.taskId = taskId;
