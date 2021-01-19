@@ -1,9 +1,7 @@
 package com.terencepan.demo.backend.homeimprovementbackend.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Task {
@@ -12,6 +10,14 @@ public class Task {
     private Long taskId;
     private String taskName;
     private String taskDescription;
+    @OneToMany
+    private List<Step> taskSteps;
+    @OneToMany
+    private List<Comment> taskComments;
+    @OneToMany
+    private List<Material> taskMaterials;
+    @OneToOne
+    private User createdBy;
 
     public void setTaskId(Long taskId) {
         this.taskId = taskId;
