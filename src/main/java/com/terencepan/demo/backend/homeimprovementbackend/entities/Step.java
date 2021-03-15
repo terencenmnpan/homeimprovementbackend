@@ -11,6 +11,8 @@ public class Step {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long stepId;
+    private String stepName;
+    private String stepDescription;
 
     public void setStepId(Long stepId) {
         this.stepId = stepId;
@@ -18,5 +20,21 @@ public class Step {
 
     public Long getStepId() {
         return stepId;
+    }
+
+    public String getStepName() {
+        return stepName;
+    }
+
+    public void setStepName(String stepName) {
+        this.stepName = stepName;
+    }
+
+    public String getStepDescription() {
+        return stepDescription;
+    }
+
+    public void setStepDescription(String stepDescription) {
+        this.stepDescription = stepDescription;
     }
 }
